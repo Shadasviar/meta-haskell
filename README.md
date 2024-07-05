@@ -1,0 +1,1 @@
+# Haskell Yocto meta layer #
