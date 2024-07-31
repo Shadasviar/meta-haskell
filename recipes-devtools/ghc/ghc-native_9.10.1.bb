@@ -1,7 +1,9 @@
 require ghc.inc
 
-BOOTSTRAP_DIR = "${S}/hadrian/bootstrap"
-HC            = "/usr/bin/ghc"
+BOOTSTRAP_DIR           = "${S}/hadrian/bootstrap"
+HC                      = "/usr/bin/ghc"
+BOOTSTRAP_PLAN_FILENAME = "plan-bootstrap"
+GHC_VERSION_SEPARATOR   = "_"
 
 INHIBIT_DEFAULT_DEPS      = "1"
 
