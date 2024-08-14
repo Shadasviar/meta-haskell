@@ -5,15 +5,13 @@ HC                      = "/usr/bin/ghc"
 BOOTSTRAP_PLAN_FILENAME = "plan-bootstrap"
 GHC_VERSION_SEPARATOR   = "_"
 
-INHIBIT_DEFAULT_DEPS      = "1"
-
 DEPENDS += "xz-native make-native"
 
 inherit cabal-bootstrap native
 
 do_configure() {
   ./boot
-  ./configure
+  ./configure --prefix=${prefix}
 }
 
 do_compile() {
@@ -22,6 +20,6 @@ do_compile() {
 
 do_install() {
   cd _build/bindist/${BP}-${HOST_ARCH}-unknown-linux
-  ./configure
-  make install DESTDIR=${D}
+  ./configure --prefix=${prefix}
+  DESTDIR=${D} ${MAKE} install
 }

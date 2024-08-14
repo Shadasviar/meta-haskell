@@ -1,10 +1,13 @@
 GHC_VERSION           ?= "${@ghc_version(d)}"
 GHC_VERSION_SEPARATOR ?= "."
 
+INHIBIT_DEFAULT_DEPS   = "1"
+INSANE_SKIP:${PN}     += "already-stripped"
+
 def ghc_version(d):
   import os
   ver_str = os.popen(d.getVar('HC') + ' -V').read()
-  d.setVar('GHC_VERSION', ver_str.split()[-1].replace('.', d.getVar('GHC_VERSION_SEPARATOR')))
+  return ver_str.split()[-1].replace('.', d.getVar('GHC_VERSION_SEPARATOR'))
 
 do_bootstrap() {
   install -d ${B}

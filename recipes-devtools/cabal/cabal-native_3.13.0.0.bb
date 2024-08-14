@@ -1,11 +1,8 @@
 require cabal.inc
 
 BOOTSTRAP_DIR           = "${S}/bootstrap"
-HC                      = "/usr/bin/ghc"
 BOOTSTRAP_PLAN_FILENAME = "linux"
-
-INHIBIT_DEFAULT_DEPS   = "1"
-INSANE_SKIP:${PN}     += "already-stripped"
+HC                      = "/usr/bin/ghc"
 
 inherit cabal-bootstrap native
 
