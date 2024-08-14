@@ -1,5 +1,6 @@
 GHC_VERSION           ?= "${@ghc_version(d)}"
 GHC_VERSION_SEPARATOR ?= "."
+HC                     = "/usr/bin/ghc"
 
 INHIBIT_DEFAULT_DEPS   = "1"
 INSANE_SKIP:${PN}     += "already-stripped"

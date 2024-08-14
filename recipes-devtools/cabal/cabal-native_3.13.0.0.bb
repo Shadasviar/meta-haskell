@@ -2,7 +2,6 @@ require cabal.inc
 
 BOOTSTRAP_DIR           = "${S}/bootstrap"
 BOOTSTRAP_PLAN_FILENAME = "linux"
-HC                      = "/usr/bin/ghc"
 
 inherit cabal-bootstrap native
 
