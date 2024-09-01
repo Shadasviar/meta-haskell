@@ -8,7 +8,7 @@ DEPENDS += "xz-native make-native"
 
 inherit cabal-bootstrap
 
-GHC_TARGET_ARCH ?= "${TARGET_ARCH}-linux"
+GHC_TARGET_ARCH ?= "${TARGET_ARCH}-${TARGET_OS}"
 
 do_configure() {
   ./boot
