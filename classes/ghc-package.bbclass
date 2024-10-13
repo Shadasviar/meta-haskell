@@ -2,9 +2,18 @@ inherit ghc-info
 
 GHC ?= "${RECIPE_SYSROOT_NATIVE}${bindir_native}/${TARGET_ARCH}-${TARGET_OS}-ghc"
 
-DEPENDS += "ghc-cross-${TARGET_ARCH}"
+SRC_URI = "https://hackage.haskell.org/package/${BPN}-${PV}/${BPN}-${PV}.tar.gz"
+
+DEPENDS += "ghc-cross-${TARGET_ARCH} ghc-base"
 
 SETUP_FILE ?= "${S}/Setup"
+
+INSANE_SKIP:${PN} += "already-stripped"
+
+PACKAGES              = "${PN}-staticdev ${PN} ${PN}-doc ${PN}-dev"
+FILES:${PN}-staticdev = "${libdir}/*/*/*.a"
+FILES:${PN}           = "${libdir}"
+FILES:${PN}-doc       = "/share"
 
 do_configure() {
   ${GHC} -threaded -dynamic --make ${SETUP_FILE}
