@@ -3,12 +3,14 @@ require ghc.inc
 BOOTSTRAP_DIR           = "${S}/hadrian/bootstrap"
 BOOTSTRAP_PLAN_FILENAME = "plan-bootstrap"
 GHC_VERSION_SEPARATOR   = "_"
+SYSROOT_DIRS_NATIVE    += "${prefix}/bin ${prefix}/lib"
 
 DEPENDS += "xz-native make-native"
 
-inherit cabal-bootstrap
+inherit cabal-bootstrap ghc-info
 
 GHC_TARGET_ARCH ?= "${TARGET_ARCH}-${TARGET_OS}"
+GHC_DIR_NAME     = "${GHC_TARGET_ARCH}-ghc-${PV}"
 
 do_configure() {
   ./boot
@@ -23,4 +25,5 @@ do_install() {
   cd _build/bindist/${BP}-${GHC_TARGET_ARCH}
   ./configure --prefix=${prefix}
   DESTDIR=${D} ${MAKE} install
+  install -d ${PACKAGE_DB}
 }
