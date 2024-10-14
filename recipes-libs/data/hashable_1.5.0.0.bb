@@ -10,8 +10,8 @@ SECTION           = "libs"
 LICENSE           = "BSD-3-Clause"
 LIC_FILES_CHKSUM  = "file://${COMMON_LICENSE_DIR}/${LICENSE};md5=550794465ba0ec5312d6919e203a55f9"
 
+inherit ghc-package
+
 SRC_URI[sha256sum] = "e58b3a8e18da5f6cd7e937e5fd683e500bb1f8276b3768269759119ca0cddb6a"
 
 DEPENDS += "ghc-bignum bytestring containers deepseq filepath os-string text"
-
-inherit ghc-package

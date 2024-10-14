@@ -1,6 +1,10 @@
 inherit ghc-info
 
-GHC ?= "${RECIPE_SYSROOT_NATIVE}${bindir_native}/${TARGET_ARCH}-${TARGET_OS}-ghc"
+GHC_TOOLCHAIN_PATH    ?= "${RECIPE_SYSROOT_NATIVE}${bindir_native}"
+GHC_TOOLCHAIN_PREFIX  ?= "${TARGET_ARCH}-${TARGET_OS}"
+GHC                   ?= "${GHC_TOOLCHAIN_PATH}/${GHC_TOOLCHAIN_PREFIX}-ghc"
+GHC_PKG               ?= "${GHC}-pkg"
+HSC2HS                ?= "${GHC_TOOLCHAIN_PATH}/${GHC_TOOLCHAIN_PREFIX}-hsc2hs"
 
 SRC_URI = "https://hackage.haskell.org/package/${BPN}-${PV}/${BPN}-${PV}.tar.gz"
 
@@ -24,7 +28,8 @@ do_configure() {
       --package-db=${PACKAGE_DB} \
       --prefix=${D} \
       --with-compiler=${GHC} \
-      --with-hc-pkg=${GHC}-pkg \
+      --with-hc-pkg=${GHC_PKG} \
+      --with-hsc2hs=${HSC2HS} \
       --enable-shared \
       --disable-static \
       --enable-executable-dynamic \
