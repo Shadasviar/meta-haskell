@@ -6,7 +6,9 @@ GHC                   ?= "${GHC_TOOLCHAIN_PATH}/${GHC_TOOLCHAIN_PREFIX}-ghc"
 GHC_PKG               ?= "${GHC}-pkg"
 HSC2HS                ?= "${GHC_TOOLCHAIN_PATH}/${GHC_TOOLCHAIN_PREFIX}-hsc2hs"
 
-SRC_URI = "https://hackage.haskell.org/package/${BPN}-${PV}/${BPN}-${PV}.tar.gz"
+HS_PN   ?= "${BPN}"
+SRC_URI = "https://hackage.haskell.org/package/${HS_PN}-${PV}/${HS_PN}-${PV}.tar.gz"
+S       = "${WORKDIR}/${HS_PN}-${PV}"
 
 DEPENDS += "ghc-cross-${TARGET_ARCH} ghc-base"
 

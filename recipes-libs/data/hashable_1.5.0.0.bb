@@ -4,8 +4,8 @@ be converted to a hash value. This class exists for the benefit of \
 hashing-based data structures. The package provides instances for basic \
 types and a way to combine hash values."
 
-HOMEPAGE          = "http://github.com/haskell-unordered-containers/hashable"
-BUGTRACKER        = "https://github.com/haskell-unordered-containers/hashable/issues"
+HOMEPAGE          = "https://github.com/haskell-unordered-containers/hashable"
+BUGTRACKER        = "${HOMEPAGE}/issues"
 SECTION           = "libs"
 LICENSE           = "BSD-3-Clause"
 LIC_FILES_CHKSUM  = "file://${COMMON_LICENSE_DIR}/${LICENSE};md5=550794465ba0ec5312d6919e203a55f9"

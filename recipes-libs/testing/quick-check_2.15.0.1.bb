@@ -15,9 +15,7 @@ LIC_FILES_CHKSUM  = "file://${COMMON_LICENSE_DIR}/${LICENSE};md5=550794465ba0ec5
 
 inherit ghc-package ghc-setup-missing
 
-HS_PN   = "QuickCheck"
-SRC_URI = "https://hackage.haskell.org/package/${HS_PN}-${PV}/${HS_PN}-${PV}.tar.gz"
+HS_PN = "QuickCheck"
 SRC_URI[sha256sum] = "a3b2216ddbaf481dbc82414b6120f8b726d969db3f0b51f20a7a45425ef36e7f"
-S = "${WORKDIR}/${HS_PN}-${PV}"
 
 DEPENDS += "containers deepseq old-time random template-haskell transformers"
