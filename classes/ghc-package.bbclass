@@ -35,7 +35,8 @@ do_configure() {
       --enable-shared \
       --disable-static \
       --enable-executable-dynamic \
-      --extra-lib-dirs=${GHC_LIBDIR}
+      --extra-lib-dirs=${GHC_LIBDIR} \
+      --ghc-options="-j +RTS -A32M"
 }
 
 do_compile() {

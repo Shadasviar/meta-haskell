@@ -1,0 +1,52 @@
+From e604b1bf73e6b5f03fba89eac47660105df4eaa4 Mon Sep 17 00:00:00 2001
+From: Shadasviar <shadasviarus@gmail.com>
+Date: Tue, 15 Oct 2024 18:22:54 +0200
+Subject: [PATCH] Fix dependencies versions
+
+---
+ Setup         | Bin 0 -> 38808 bytes
+ comonad.cabal |  15 ++++++++-------
+ 1 files changed, 8 insertions(+), 7 deletions(-)
+ create mode 100755 Setup
+
+diff --git a/comonad.cabal b/comonad.cabal
+index 9bbd3bd..1d46935 100644
+--- a/comonad.cabal
++++ b/comonad.cabal
+@@ -26,6 +26,7 @@ tested-with:   GHC == 7.0.4
+              , GHC == 8.6.5
+              , GHC == 8.8.3
+              , GHC == 8.10.1
++             , GHC == 9.10.1
+ extra-source-files:
+   .gitignore
+   .hlint.yaml
+@@ -77,21 +78,21 @@ library
+ 
+   build-depends:
+     base                >= 4   && < 5,
+-    tagged              >= 0.8.6.1 && < 1,
+-    transformers        >= 0.3 && < 0.6,
+-    transformers-compat >= 0.5 && < 1
++    tagged              >= 0.8.6.1,
++    transformers        >= 0.3,
++    transformers-compat >= 0.5
+ 
+   if !impl(ghc >= 8.0)
+-    build-depends: semigroups >= 0.18.5 && < 1
++    build-depends: semigroups >= 0.18.5
+ 
+   if flag(containers)
+-    build-depends: containers >= 0.3 && < 0.7
++    build-depends: containers >= 0.3
+ 
+   if flag(distributive)
+-    build-depends: distributive >= 0.5.2 && < 1
++    build-depends: distributive >= 0.5.2
+ 
+   if flag(indexed-traversable)
+-    build-depends: indexed-traversable >= 0.1.1 && < 0.2
++    build-depends: indexed-traversable >= 0.1.1
+ 
+   if impl(ghc >= 9.0)
+     -- these flags may abort compilation with GHC-8.10
