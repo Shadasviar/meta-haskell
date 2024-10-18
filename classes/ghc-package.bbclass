@@ -21,6 +21,8 @@ FILES:${PN}-staticdev = "${libdir}/*/*/*.a"
 FILES:${PN}           = "${libdir}"
 FILES:${PN}-doc       = "/share"
 
+EXTRA_GHC_OPTIONS ?= ""
+
 do_configure() {
   ${GHC} -threaded -dynamic --make ${SETUP_FILE}
   ${SETUP_FILE} configure \
@@ -36,7 +38,8 @@ do_configure() {
       --disable-static \
       --enable-executable-dynamic \
       --extra-lib-dirs=${GHC_LIBDIR} \
-      --ghc-options="-j +RTS -A32M"
+      --ghc-options="-j +RTS -A32M" \
+      ${EXTRA_GHC_OPTIONS}
 }
 
 do_compile() {
