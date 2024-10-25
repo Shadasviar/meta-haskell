@@ -1,10 +1,9 @@
 inherit ghc-info
 
 GHC_TOOLCHAIN_PATH    ?= "${RECIPE_SYSROOT_NATIVE}${bindir_native}"
-GHC_TOOLCHAIN_PREFIX  ?= "${TARGET_ARCH}-${TARGET_OS}"
-GHC                   ?= "${GHC_TOOLCHAIN_PATH}/${GHC_TOOLCHAIN_PREFIX}-ghc"
+GHC                   ?= "${GHC_TOOLCHAIN_PATH}/${GHC_TARGET_SYS}-ghc"
 GHC_PKG               ?= "${GHC}-pkg"
-HSC2HS                ?= "${GHC_TOOLCHAIN_PATH}/${GHC_TOOLCHAIN_PREFIX}-hsc2hs"
+HSC2HS                ?= "${GHC_TOOLCHAIN_PATH}/${GHC_TARGET_SYS}-hsc2hs"
 
 HS_PN   ?= "${BPN}"
 SRC_URI = "https://hackage.haskell.org/package/${HS_PN}-${PV}/${HS_PN}-${PV}.tar.gz"
@@ -22,6 +21,9 @@ FILES:${PN}           = "${libdir}"
 FILES:${PN}-doc       = "/share"
 
 EXTRA_GHC_OPTIONS ?= ""
+
+do_compile[progress] = "outof:\s+(\d+) of (\d+)"
+do_configure[progress] = "outof:\s+(\d+) of (\d+)"
 
 do_configure() {
   ${GHC} -threaded -dynamic --make ${SETUP_FILE}
@@ -43,7 +45,7 @@ do_configure() {
 }
 
 do_compile() {
-  ${SETUP_FILE} build -v
+  ${SETUP_FILE} build
 }
 
 do_install() {
