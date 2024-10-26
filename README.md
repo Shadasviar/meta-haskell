@@ -12,6 +12,4 @@ class that will add fefault setup file to project.
 
 ## Dependencies ##
 
-This layer requires a `meta-clang` layer for cross compilation to non
-x86_64 architectures. If your target rchitecture is same with a host, you can
-just use this layer with default native codegenerator.
+This layer requires a `meta-clang` layer. https://github.com/kraj/meta-clang
