@@ -1,0 +1,32 @@
+From dc7d9f5c4b16a53d8a50cbf29961418b8fabc54e Mon Sep 17 00:00:00 2001
+From: Shadasviar <shadasviarus@gmail.com>
+Date: Sat, 26 Oct 2024 12:04:04 +0200
+Subject: [PATCH] Fix dependencies versions
+
+---
+ data-accessor.cabal | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/data-accessor.cabal b/data-accessor.cabal
+index 0490421..1cf5644 100644
+--- a/data-accessor.cabal
++++ b/data-accessor.cabal
+@@ -10,6 +10,7 @@ Cabal-Version:    >=1.10
+ Build-Type:       Simple
+ Tested-With:      GHC==6.4.1, GHC==6.8.2, GHC==6.10.4, GHC==6.12.3
+ Tested-With:      GHC==7.0.1, GHC==7.2.1, GHC==7.4.1, GHC==7.6.3
++Tested-With:      GHC==9.10.1
+ Tested-With:      JHC==0.7.3
+ Synopsis:         Utilities for accessing and manipulating fields of records
+ Description:
+@@ -100,8 +101,8 @@ Library
+     transformers >=0.2 && <0.7
+   If flag(splitBase)
+     Build-Depends:
+-      array >=0.1 && <0.6,
+-      containers >=0.1 && <0.7
++      array >=0.1,
++      containers >=0.1
+     If flag(category)
+       Hs-Source-Dirs: src-4
+       If flag(monadFail)

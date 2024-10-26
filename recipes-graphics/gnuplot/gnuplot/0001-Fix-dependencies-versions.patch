@@ -1,0 +1,52 @@
+From 0e44c32a8a2972febeb43ea10c0412accbb1043c Mon Sep 17 00:00:00 2001
+From: Shadasviar <shadasviarus@gmail.com>
+Date: Sat, 26 Oct 2024 12:33:47 +0200
+Subject: [PATCH] Fix dependencies versions
+
+---
+ gnuplot.cabal | 25 +++++++++++++------------
+ 1 file changed, 13 insertions(+), 12 deletions(-)
+
+diff --git a/gnuplot.cabal b/gnuplot.cabal
+index 29b392b..ec65fb9 100644
+--- a/gnuplot.cabal
++++ b/gnuplot.cabal
+@@ -39,6 +39,7 @@ Description:
+    Alternative packages: @plot@, @HPlot@, @Chart@, @textPlot@, @easyplot@
+ Tested-With:       GHC==7.4.2, GHC==7.6.3, GHC==7.8.4, GHC==7.10.3
+ Tested-With:       GHC==8.2.1, GHC==8.6.5
++Tested-With:       GHC==9.10.1
+ Build-Type:        Simple
+ Extra-Source-Files:
+   Makefile
+@@ -69,18 +70,18 @@ Flag executeShell
+ 
+ Library
+   Build-Depends:
+-    filepath >=1.1 && <1.5,
+-    temporary >=1.1 && <1.4,
+-    array >=0.1 && <0.6,
+-    containers >=0.1 && <0.7,
+-    utility-ht >=0.0.12 && <0.1,
+-    data-accessor-transformers >=0.2.1 && <0.3,
+-    data-accessor >=0.2.2 && <0.3,
+-    transformers >=0.3 && <0.7,
+-    semigroups >=0.1 && <1.0,
+-    deepseq >=1.0 && <1.5,
+-    process >=1.0 && <1.7,
+-    time >=1.5 && <1.14,
++    filepath >=1.1,
++    temporary >=1.1,
++    array >=0.1,
++    containers >=0.1,
++    utility-ht >=0.0.12,
++    data-accessor-transformers >=0.2.1,
++    data-accessor >=0.2.2,
++    transformers >=0.3,
++    semigroups >=0.1,
++    deepseq >=1.0,
++    process >=1.0,
++    time >=1.5,
+     base >=2 && <5
+ 
+   Default-Language: Haskell98
