@@ -22,8 +22,7 @@ FILES:${PN}-doc       = "/share"
 
 EXTRA_GHC_OPTIONS ?= ""
 
-do_compile[progress] = "outof:\s+(\d+) of (\d+)"
-do_configure[progress] = "outof:\s+(\d+) of (\d+)"
+do_compile[progress] = "outof:\s+\[(\d+) of (\d+)\]"
 
 do_configure() {
   ${GHC} -threaded -dynamic --make ${SETUP_FILE}
