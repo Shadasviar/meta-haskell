@@ -12,4 +12,9 @@ class that will add fefault setup file to project.
 
 ## Dependencies ##
 
-This layer requires a `meta-clang` layer. https://github.com/kraj/meta-clang
+
+## Host tools ##
+
+This layer requires `ghc`, `ghc-pkg`, `cabal`, `alex` and `happy` packages
+installed on the host. Before building ghc, ensure you have an actual cabal
+repository by running `cabal update` before building Yocto project.

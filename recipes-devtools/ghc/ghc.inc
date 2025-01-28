@@ -5,11 +5,11 @@ environment for the functional language Haskell."
 HOMEPAGE          = "https://www.haskell.org/ghc/"
 BUGTRACKER        = "https://gitlab.haskell.org/ghc/ghc/-/wikis/report-a-bug"
 SECTION           = "devtools"
-LICENSE           = "BSD-3-Clause"
-LIC_FILES_CHKSUM  = "file://${COMMON_LICENSE_DIR}/${LICENSE};md5=550794465ba0ec5312d6919e203a55f9"
+
+inherit license-bsd3
 
 SRC_URI = "gitsm://gitlab.haskell.org/ghc/ghc.git;protocol=https;branch=${BPN}-${@base_version(d)}"
-SRCREV  = "934a8bb930390d5db1e5613ddfeafc8c80dd9b96"
+SRCREV  = "c6e5b18825363b4a89d262de6d41a7844fab188d"
 S       = "${WORKDIR}/git"
 
 DEPENDS = "autoconf-native automake-native"
