@@ -4,6 +4,7 @@ DESCRIPTION = "This is a wrapper to gnuplot which lets you create 2D and 3D plot
 HOMEPAGE    = "http://www.haskell.org/haskellwiki/Gnuplot"
 BUGTRACKER  = "${HOMEPAGE}"
 SECTION     = "graphics"
+HS_PN       = "gnuplot"
 
 inherit ghc-package license-bsd3
 
@@ -18,3 +19,5 @@ DEPENDS += "\
   temporary \
   utility-ht\
 "
+
+RDEPENDS:${PN} += "gnuplot"
