@@ -10,6 +10,13 @@ For usual packages use `ghc-package` class that builds package using `Setup.hs`
 file. If project does not have setup file, you can also inherit `ghc-setup-missing`
 class that will add fefault setup file to project.
 
+## Notes ##
+
+Template haskell cross compilation does not work in this layer (e.g. vty-unix
+package cannot compile) because it requires to run code on the target platform.
+It would require running ghci in qemu during recipe compilation, that would
+complicate things a lot.
+
 ## Dependencies ##
 
 

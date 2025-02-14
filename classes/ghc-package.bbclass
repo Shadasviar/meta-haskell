@@ -17,7 +17,7 @@ INSANE_SKIP:${PN} += "already-stripped"
 
 PACKAGES              = "${PN}-staticdev ${PN} ${PN}-doc ${PN}-dev"
 FILES:${PN}-staticdev = "${libdir}/*/*/*.a"
-FILES:${PN}           = "${libdir}"
+FILES:${PN}           = "${libdir} ${bindir}"
 FILES:${PN}-doc       = "/share"
 
 EXTRA_GHC_OPTIONS ?= ""

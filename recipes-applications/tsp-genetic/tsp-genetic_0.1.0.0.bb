@@ -9,7 +9,7 @@ SECTION     = "applications"
 inherit ghc-package license-gpl3-only
 
 SRC_URI = "git://gitlab.com/Shadasviar/tsp-genetic.git;protocol=https;branch=master"
-SRCREV  = "7b1a85b6ddcb9bece0ae5111697df67ea318a204"
+SRCREV  = "a380ed168be7214d691e6b1ae85d9379b4fc177f"
 S       = "${WORKDIR}/git"
 
 DEPENDS += "\
@@ -20,5 +20,8 @@ DEPENDS += "\
   optparse-applicative \
   random-shuffle \
   split \
-  vty-unix \
+  unix \
+  ghc-rts-thr \
+  libffi \
+  numactl \
 "
