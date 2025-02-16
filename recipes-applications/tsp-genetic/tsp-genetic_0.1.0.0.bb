@@ -22,6 +22,6 @@ DEPENDS += "\
   split \
   unix \
   ghc-rts-thr \
-  libffi \
-  numactl \
 "
+
+RDEPENDS:${PN}:append = " libffi numactl"

@@ -9,4 +9,6 @@ GHC_PN      = "rts"
 SUFFIX      = "_thr"
 DIR_SUFFIX  = ""
 
+RDEPENDS:${PN}:append = " numactl libffi"
+
 inherit ghc-system-package license-bsd3

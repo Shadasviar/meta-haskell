@@ -7,7 +7,7 @@ inherit ghc-info
 
 PACKAGES = "${PN}-staticdev ${PN} ${PN}-dev ${PN}-dbg"
 
-FILES:${PN}-staticdev = "${libdir}/${GHC_TARGET_NAME}/${GHC_PN}-${PV}-inplace/*.a"
+FILES:${PN}-staticdev = "${libdir}/${GHC_TARGET_NAME}/${GHC_PN}-${PV}${DIR_SUFFIX}/*.a"
 FILES:${PN}-dbg       = "${libdir}/${GHC_TARGET_NAME}/.debug"
 FILES:${PN}           = "${libdir}"
 
