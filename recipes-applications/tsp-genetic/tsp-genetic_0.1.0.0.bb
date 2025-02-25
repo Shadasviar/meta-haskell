@@ -9,7 +9,7 @@ SECTION     = "applications"
 inherit ghc-package license-gpl3-only
 
 SRC_URI = "git://gitlab.com/Shadasviar/tsp-genetic.git;protocol=https;branch=master"
-SRCREV  = "a380ed168be7214d691e6b1ae85d9379b4fc177f"
+SRCREV  = "9eaafb8fe3632bb6764cd317149dba3c7a7cf397"
 S       = "${WORKDIR}/git"
 
 DEPENDS += "\
